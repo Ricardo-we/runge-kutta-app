@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runge Kutta App </title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <h1 style="text-align:center; width: 100%;">Método de Runge-Kutta</h1>
+
+    <!-- Formulario para ingresar parámetros -->
+    <form id="rkForm">
+      <label for="x0">Valor inicial de x (x₀):</label><br>
+      <input type="number" id="x0" step="any" value="0"><br>
+    
+      <label for="y0">Valor inicial de y (y₀):</label><br>
+      <input type="number" id="y0" step="any" value="1"><br>
+    
+      <label for="xEnd">Valor final de x:</label><br>
+      <input type="number" id="xEnd" step="any" value="2"><br>
+    
+      <label for="h">Tamaño del paso (h):</label><br>
+      <input type="number" id="h" step="any" value="0.1"><br>
+    
+      <label for="func">Función (dy/dx = f(x, y)):</label><br>
+      <input type="text" id="func" value="-2*x*y"><br>
+    
+      <button type="button" class="btn" onclick="calculateRungeKutta()">Calcular</button>
+    </form>
+    
+    <!-- Resultados -->
+    <div class="result" id="results"></div>
+
+    
+    <script src="./index.js"></script>
+</body>
+</html>

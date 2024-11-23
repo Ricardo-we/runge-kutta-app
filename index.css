@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+input,
+button {
+  margin: 5px 0;
+  padding: 15px;
+  width: 100%;
+}
+.result {
+  margin-top: 20px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background-color: #f4f4f4;
+}
+
+.btn {
+    background-color: #1f8cf3;
+    outline: none;
+    color: white;
+    padding: 20px;
+    border: none;
+    min-width: 150px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#rkForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: auto;
+}
