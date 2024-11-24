@@ -25,15 +25,20 @@ function calculateRungeKutta() {
   const h = parseFloat(document.getElementById("h").value);
   const func = document.getElementById("func").value;
 
-  // Convertimos la función ingresada en texto a una función real
-  const f = new Function("x", "y", `return ${func};`);
+  // Convertimos la función ingresada en texto a una función real, soportando Math
+  const f = new Function(
+    "x", 
+    "y", 
+    `with (Math) { return ${func}; }`
+  );
 
-  // Calculamos los resultados con el método de Runge-Kutta
-  const results = rungeKutta(f, x0, y0, xEnd, h);
+  try {
+    // Calculamos los resultados con el método de Runge-Kutta
+    const results = rungeKutta(f, x0, y0, xEnd, h);
 
-  // Mostramos los resultados en una tabla
-  const resultDiv = document.getElementById("results");
-  resultDiv.innerHTML = `
+    // Mostramos los resultados en una tabla
+    const resultDiv = document.getElementById("results");
+    resultDiv.innerHTML = `
       <h2>Resultados</h2>
       <table>
         <tr>
@@ -52,4 +57,7 @@ function calculateRungeKutta() {
           .join("")}
       </table>
     `;
+  } catch (error) {
+    alert("Error en la función ingresada. Verifica que esté correctamente escrita.");
+  }
 }
